@@ -1,0 +1,77 @@
+{
+  "name": "resumable-s3-multipart-upload",
+  "version": "0.1.0",
+  "description": "Provider-agnostic resumable multipart uploads for S3-compatible object storage.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js"
+    },
+    "./server": {
+      "types": "./dist/server/multipart-service.d.ts",
+      "import": "./dist/server/multipart-service.js"
+    },
+    "./adapters/supabase": {
+      "types": "./dist/supabase.d.ts",
+      "import": "./dist/supabase.js"
+    }
+  },
+  "keywords": [
+    "s3",
+    "multipart-upload",
+    "resumable-upload",
+    "presigned-url",
+    "cloudflare-r2",
+    "nextjs",
+    "supabase",
+    "minio"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "docs",
+    "examples",
+    "sql",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    ".env.example"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.998.0",
+    "@aws-sdk/s3-request-presigner": "^3.998.0"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.84.0",
+    "react": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@supabase/supabase-js": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.84.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "react": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}
